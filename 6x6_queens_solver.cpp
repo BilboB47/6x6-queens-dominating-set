@@ -11,6 +11,7 @@
 #include <vector>
 #include <cstdint>
 #include <array>
+#include <cmath>
 
 using Bitboard = uint64_t;
 
@@ -45,7 +46,7 @@ void init_queensAttacks(){
                     pattern |= (1ULL << (r * BOARD_DIM + c));
                 }
 
-                if (abs(r - row) == abs(c - col)) {
+                if (std::abs(r - row) == std::abs(c - col)) {
                     pattern |= (1ULL << (r * BOARD_DIM + c));
                 }
             }
@@ -110,4 +111,5 @@ int main()
 
 
 }
+
 
